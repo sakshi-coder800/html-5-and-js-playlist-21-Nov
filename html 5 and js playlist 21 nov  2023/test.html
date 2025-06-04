@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video width="420" height="480"id="video"   controls="controls" ontimeupdate="demo()"  >
+        <source src="videos/1.mp4"></source>
+    </video>
+    <br>
+    <p id="result"></p>
+
+    <button onclick="demo()"> check video duration</button>
+    <script>
+        function demo(){
+            var video= document.getElementById("video");
+            // alert(video.currentTime/60)
+            var result=document.getElementById("result");
+            var c_minute=video.currentTime/60;
+            var duration=video.duration/60;
+            result.innerHTML=c_minute.toFixed(2) + " / " +duration.toFixed(2);
+            
+        }
+    </script>
+</body>
+</html>
